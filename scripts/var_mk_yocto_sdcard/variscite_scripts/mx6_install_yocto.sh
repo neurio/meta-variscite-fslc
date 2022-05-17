@@ -132,7 +132,7 @@ usage()
 	echo " Usage: $0 OPTIONS"
 	echo
 	echo " OPTIONS:"
-	echo " -b <mx6cb|scb|symph|dart>	carrier Board model (MX6CustomBoard/SOLOCustomBoard/SymphonyBoard/DART-MX6) - mandartory parameter."
+	echo " -b <mx6cb-nxp-bsp|scb|symph|dart>	carrier Board model (MX6CustomBoard/SOLOCustomBoard/SymphonyBoard/DART-MX6) - mandartory parameter."
 	echo " -t <cap|res>		Touchscreen model (capacitive/resistive) - mandatory in case of MX6CustomBoard; ignored otherwise."
 	echo " -r <nand|emmc>		Rootfs device (NAND/eMMC) - mandatory in case of MX6CustomBoard/SOLOCustomBoard/SymphonyBoard; ignored in case of DART-MX6."
 	echo " -u			create two rootfs partitions (for swUpdate double-copy) - ignored in case of NAND rootfs device."

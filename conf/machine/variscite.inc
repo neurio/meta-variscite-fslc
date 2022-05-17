@@ -6,15 +6,15 @@ IMX_DEFAULT_BSP = "nxp"
 
 USE_VT = "0"
 
-KERNEL_IMAGETYPE:mx8 = "Image.gz"
+KERNEL_IMAGETYPE:mx8-generic-bsp = "Image.gz"
 
-WKS_FILE:mx8 = "imx-imx-boot-singlepart.wks.in"
+WKS_FILE:mx8-generic-bsp = "imx-imx-boot-singlepart.wks.in"
 
-DEFAULTTUNE:mx8mm  ?= "cortexa53-crypto"
-DEFAULTTUNE:mx8mn  ?= "cortexa53-crypto"
-DEFAULTTUNE:mx8mq  ?= "cortexa53-crypto"
-DEFAULTTUNE:mx8qxp ?= "cortexa35-crypto"
-DEFAULTTUNE:mx8qm ?= "cortexa72-cortexa53-crypto"
+DEFAULTTUNE:mx8mm-generic-bsp  ?= "cortexa53-crypto"
+DEFAULTTUNE:mx8mn-generic-bsp  ?= "cortexa53-crypto"
+DEFAULTTUNE:mx8mq-generic-bsp  ?= "cortexa53-crypto"
+DEFAULTTUNE:mx8qxp-generic-bsp ?= "cortexa35-crypto"
+DEFAULTTUNE:mx8qm-generic-bsp ?= "cortexa72-cortexa53-crypto"
 
 # Variscite BSP default providers
 PREFERRED_PROVIDER:u-boot = "u-boot-variscite"
@@ -23,16 +23,16 @@ PREFERRED_PROVIDER:virtual/bootloader = "u-boot-variscite"
 PREFERRED_PROVIDER:virtual/kernel = "linux-variscite"
 
 # Use i.MX Gstreamer Version
-MACHINE_GSTREAMER_1_0_PLUGIN:mx8 = "imx-gst1.0-plugin"
-PREFERRED_VERSION:gstreamer1.0:mx8 ?= "1.16.2.imx"
-PREFERRED_VERSION:gstreamer1.0-plugins-base:mx8 ?= "1.16.2.imx"
-PREFERRED_VERSION:gstreamer1.0-plugins-good:mx8 ?= "1.16.3.imx"
-PREFERRED_VERSION:gstreamer1.0-plugins-bad:mx8 ?= "1.16.3.imx"
-PREFERRED_VERSION:gstreamer1.0-libav:mx8 ?= "1.16.0"
+MACHINE_GSTREAMER_1_0_PLUGIN:mx8-generic-bsp = "imx-gst1.0-plugin"
+PREFERRED_VERSION:gstreamer1.0:mx8-generic-bsp ?= "1.16.2.imx"
+PREFERRED_VERSION:gstreamer1.0-plugins-base:mx8-generic-bsp ?= "1.16.2.imx"
+PREFERRED_VERSION:gstreamer1.0-plugins-good:mx8-generic-bsp ?= "1.16.3.imx"
+PREFERRED_VERSION:gstreamer1.0-plugins-bad:mx8-generic-bsp ?= "1.16.3.imx"
+PREFERRED_VERSION:gstreamer1.0-libav:mx8-generic-bsp ?= "1.16.0"
 
 # Add VPU and Cortex M4/M7 firmware
-MACHINE_FIRMWARE:append:mx8 = " \
-	firmware-imx-vpu-imx8 \
+MACHINE_FIRMWARE:append:mx8-generic-bsp = " \
+	firmware-imx-vpu-imx8-generic-bsp \
 	freertos-variscite \
 	"
 
@@ -58,7 +58,7 @@ MACHINE_EXTRA_RDEPENDS += " \
 "
 
 # Packages added to all images (including core-image-minimal)
-IMAGE_INSTALL:append:mx8 = " \
+IMAGE_INSTALL:append:mx8-generic-bsp = " \
 	kernel-image \
 	kernel-devicetree \
 "

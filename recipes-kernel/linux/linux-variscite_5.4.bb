@@ -81,4 +81,4 @@ pkg_postinst:kernel-devicetree:append:imx8qm-var-som () {
 # Added by meta-virtualization/recipes-kernel/linux/linux-yocto_5.4_virtualization.inc
 KERNEL_FEATURES:remove = "cfg/virtio.scc"
 
-COMPATIBLE_MACHINE = "(mx6|mx7|mx8)"
+COMPATIBLE_MACHINE = "(mx6-nxp-bsp|mx7-nxp-bsp|mx8-nxp-bsp)"

@@ -11,7 +11,7 @@ Before running this script you need to bitbake fsl-image-gui.
 
 
 Usage:
-sudo MACHINE=<var-som-mx6|imx6ul-var-dart|imx7-var-som> ./var-create-yocto-sdcard.sh [options] /dev/sdX
+sudo MACHINE=<var-som-mx6-nxp-bsp|imx6ul-var-dart|imx7-var-som> ./var-create-yocto-sdcard.sh [options] /dev/sdX
 (Change /dev/sdX to your device name)
 
 options:

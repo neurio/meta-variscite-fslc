@@ -61,7 +61,7 @@ IMAGE_INSTALL:append:imxdrm = " \
 	libdrm-tests \
 "
 
-CORE_IMAGE_EXTRA_INSTALL:append:mx8 = "\
+CORE_IMAGE_EXTRA_INSTALL:append:mx8-nxp-bsp = "\
     packagegroup-fsl-tools-gpu \
 "
 

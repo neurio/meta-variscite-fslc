@@ -106,7 +106,7 @@ echo "================================================"
 
 help() {
 	bn=`basename $0`
-	echo " Usage: MACHINE=<var-som-mx6|imx6ul-var-dart|imx7-var-som|imx8mq-var-dart|imx8mm-var-dart|imx8qxp-var-som|imx8qxpb0-var-som|imx8qm-var-som|imx8mn-var-som> $bn <options> device_node"
+	echo " Usage: MACHINE=<var-som-mx6-nxp-bsp|imx6ul-var-dart|imx7-var-som|imx8mq-var-dart|imx8mm-var-dart|imx8qxp-var-som|imx8qxpb0-var-som|imx8qm-var-som|imx8mn-var-som> $bn <options> device_node"
 	echo
 	echo " options:"
 	echo " -h		display this Help message"
