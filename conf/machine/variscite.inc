@@ -6,32 +6,32 @@ IMX_DEFAULT_BSP = "nxp"
 
 USE_VT = "0"
 
-KERNEL_IMAGETYPE_mx8 = "Image.gz"
+KERNEL_IMAGETYPE:mx8 = "Image.gz"
 
-WKS_FILE_mx8 = "imx-imx-boot-singlepart.wks.in"
+WKS_FILE:mx8 = "imx-imx-boot-singlepart.wks.in"
 
-DEFAULTTUNE_mx8mm  ?= "cortexa53-crypto"
-DEFAULTTUNE_mx8mn  ?= "cortexa53-crypto"
-DEFAULTTUNE_mx8mq  ?= "cortexa53-crypto"
-DEFAULTTUNE_mx8qxp ?= "cortexa35-crypto"
-DEFAULTTUNE_mx8qm ?= "cortexa72-cortexa53-crypto"
+DEFAULTTUNE:mx8mm  ?= "cortexa53-crypto"
+DEFAULTTUNE:mx8mn  ?= "cortexa53-crypto"
+DEFAULTTUNE:mx8mq  ?= "cortexa53-crypto"
+DEFAULTTUNE:mx8qxp ?= "cortexa35-crypto"
+DEFAULTTUNE:mx8qm ?= "cortexa72-cortexa53-crypto"
 
 # Variscite BSP default providers
-PREFERRED_PROVIDER_u-boot = "u-boot-variscite"
-PREFERRED_PROVIDER_u-boot-fw-utils = "u-boot-fw-utils"
-PREFERRED_PROVIDER_virtual/bootloader = "u-boot-variscite"
-PREFERRED_PROVIDER_virtual/kernel = "linux-variscite"
+PREFERRED_PROVIDER:u-boot = "u-boot-variscite"
+PREFERRED_PROVIDER:u-boot-fw-utils = "u-boot-fw-utils"
+PREFERRED_PROVIDER:virtual/bootloader = "u-boot-variscite"
+PREFERRED_PROVIDER:virtual/kernel = "linux-variscite"
 
 # Use i.MX Gstreamer Version
-MACHINE_GSTREAMER_1_0_PLUGIN_mx8 = "imx-gst1.0-plugin"
-PREFERRED_VERSION_gstreamer1.0_mx8 ?= "1.16.2.imx"
-PREFERRED_VERSION_gstreamer1.0-plugins-base_mx8 ?= "1.16.2.imx"
-PREFERRED_VERSION_gstreamer1.0-plugins-good_mx8 ?= "1.16.3.imx"
-PREFERRED_VERSION_gstreamer1.0-plugins-bad_mx8 ?= "1.16.3.imx"
-PREFERRED_VERSION_gstreamer1.0-libav_mx8 ?= "1.16.0"
+MACHINE_GSTREAMER_1_0_PLUGIN:mx8 = "imx-gst1.0-plugin"
+PREFERRED_VERSION:gstreamer1.0:mx8 ?= "1.16.2.imx"
+PREFERRED_VERSION:gstreamer1.0-plugins-base:mx8 ?= "1.16.2.imx"
+PREFERRED_VERSION:gstreamer1.0-plugins-good:mx8 ?= "1.16.3.imx"
+PREFERRED_VERSION:gstreamer1.0-plugins-bad:mx8 ?= "1.16.3.imx"
+PREFERRED_VERSION:gstreamer1.0-libav:mx8 ?= "1.16.0"
 
 # Add VPU and Cortex M4/M7 firmware
-MACHINE_FIRMWARE_append_mx8 = " \
+MACHINE_FIRMWARE:append:mx8 = " \
 	firmware-imx-vpu-imx8 \
 	freertos-variscite \
 	"
@@ -58,7 +58,7 @@ MACHINE_EXTRA_RDEPENDS += " \
 "
 
 # Packages added to all images (including core-image-minimal)
-IMAGE_INSTALL_append_mx8 = " \
+IMAGE_INSTALL:append:mx8 = " \
 	kernel-image \
 	kernel-devicetree \
 "
@@ -67,8 +67,8 @@ IMAGE_FSTYPES = "tar.gz wic.gz"
 
 # Wayland based distros add systemd to DISTRO_FEATURES
 # Remove sysvinit or systemd based on DISTRO_FEATURES to avoid conflicts
-DISTRO_FEATURES_BACKFILL_CONSIDERED_append = "${@bb.utils.contains('DISTRO_FEATURES', 'systemd', ' sysvinit', '', d)}"
-DISTRO_FEATURES_BACKFILL_CONSIDERED_append = "${@bb.utils.contains('DISTRO_FEATURES', 'sysvinit', ' systemd', '', d)}"
+DISTRO_FEATURES_BACKFILL_CONSIDERED:append = "${@bb.utils.contains('DISTRO_FEATURES', 'systemd', ' sysvinit', '', d)}"
+DISTRO_FEATURES_BACKFILL_CONSIDERED:append = "${@bb.utils.contains('DISTRO_FEATURES', 'sysvinit', ' systemd', '', d)}"
 
 # Use bluez-alsa instead of pulseaudio
-DISTRO_FEATURES_BACKFILL_CONSIDERED_append = " pulseaudio"
+DISTRO_FEATURES_BACKFILL_CONSIDERED:append = " pulseaudio"

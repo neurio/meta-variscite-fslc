@@ -1,15 +1,15 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
-SRC_URI_append_imx8mm-var-dart = " \
+SRC_URI:append:imx8mm-var-dart = " \
 	file://disable-serialgetty.sh \
 	file://disable-serialgetty.service \
 "
-FILES_${PN}_append_imx8mm-var-dart = " \ 
+FILES:${PN}:append:imx8mm-var-dart = " \
         ${systemd_unitdir}/system/* \
         ${sysconfdir}/systemd/system/* \
 "
 
-do_install_append_imx8mm-var-dart() {
+do_install:append:imx8mm-var-dart() {
 	install -d ${D}${systemd_unitdir}/system
 	install -d ${D}${sysconfdir}/systemd/system/sysinit.target.wants
 	install -m 0644 ${WORKDIR}/disable-serialgetty.service ${D}${systemd_unitdir}/system

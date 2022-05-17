@@ -13,7 +13,7 @@ SOC_TOOLS_TEST = ""
 SOC_TOOLS_TEST_imx = "imx-test"
 SOC_TOOLS_TEST_imxgpu  = "imx-test imx-gpu-viv-demos"
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
 	${SOC_TOOLS_TESTAPPS} \
 	procps \
 	ptpd \

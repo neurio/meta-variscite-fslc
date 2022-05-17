@@ -1,4 +1,4 @@
-do_install_append() {
+do_install:append() {
 	install -d ${D}/boot
 	mv ${D}${nonarch_base_libdir}/firmware/imx/hdmi/hdmitxfw.bin ${D}/boot
 	mv ${D}${nonarch_base_libdir}/firmware/imx/hdmi/hdmirxfw.bin ${D}/boot
@@ -8,4 +8,4 @@ do_install_append() {
 	install -m 0644 ${S}/firmware/vpu/vpu_fw_imx8_enc.bin ${D}${nonarch_base_libdir}/firmware/vpu
 }
 
-FILES_${PN}-hdmi += "/boot/"
+FILES:${PN}-hdmi += "/boot/"

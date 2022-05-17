@@ -19,11 +19,11 @@ S = "${WORKDIR}/git"
 MCUXPRESSO_BRANCH = "mcuxpresso_sdk_${PV}-var01"
 
 CM_BOARD="INVALID"
-CM_BOARD_mx8mn="som_mx8mn"
-CM_BOARD_mx8mq="dart_mx8mq"
-CM_BOARD_mx8mm="dart_mx8mm"
-CM_BOARD_mx8qm="som_mx8qm"
-CM_BOARD_mx8qxp="som_mx8qx"
+CM_BOARD:mx8mn="som_mx8mn"
+CM_BOARD:mx8mq="dart_mx8mq"
+CM_BOARD:mx8mm="dart_mx8mm"
+CM_BOARD:mx8qm="som_mx8qm"
+CM_BOARD:mx8qxp="som_mx8qx"
 
 # Firmware source directories
 CM_DEMOS = " \
@@ -33,7 +33,7 @@ CM_DEMOS = " \
 "
 
 # Firmware source directories
-CM_DEMOS_mx8qm = " \
+CM_DEMOS:mx8qm = " \
     multicore_examples/rpmsg_lite_str_echo_rtos/cm4_core0 \
     multicore_examples/rpmsg_lite_pingpong_rtos/linux_remote/cm4_core0 \
     demo_apps/hello_world/cm4_core0 \
@@ -57,15 +57,15 @@ CM_DEMOS_mx8qm = " \
 #   echo start > /sys/class/remoteproc/remoteproc0/state
 #   echo stop > /sys/class/remoteproc/remoteproc0/state
 CM_DEMOS_DISABLE_CACHE = ""
-CM_DEMOS_DISABLE_CACHE_mx8qxp = "demo_apps/disable_cache"
-CM_DEMOS_DISABLE_CACHE_mx8qm = "demo_apps/disable_cache/cm4_core0 demo_apps/disable_cache/cm4_core1"
+CM_DEMOS_DISABLE_CACHE:mx8qxp = "demo_apps/disable_cache"
+CM_DEMOS_DISABLE_CACHE:mx8qm = "demo_apps/disable_cache/cm4_core0 demo_apps/disable_cache/cm4_core1"
 
-DISABLE_CACHE_PATCH="disable_cache.patch"
-DISABLE_CACHE_PATCH_imx8qxp-var-som="disable_cache_${PV}.patch"
-DISABLE_CACHE_PATCH_imx8qxpb0-var-som="disable_cache_${PV}.patch"
-SRC_URI_append_imx8qxp-var-som += "file://${DISABLE_CACHE_PATCH};apply=no"
-SRC_URI_append_imx8qxpb0-var-som += "file://${DISABLE_CACHE_PATCH};apply=no"
-SRC_URI_append_imx8qm-var-som += "file://${DISABLE_CACHE_PATCH};apply=no"
+DISABLE_CACHE_PATCH = "disable_cache.patch"
+DISABLE_CACHE_PATCH:imx8qxp-var-som = "disable_cache_${PV}.patch"
+DISABLE_CACHE_PATCH:imx8qxpb0-var-som = "disable_cache_${PV}.patch"
+SRC_URI:append:imx8qxp-var-som = " file://${DISABLE_CACHE_PATCH};apply=no"
+SRC_URI:append:imx8qxpb0-var-som = " file://${DISABLE_CACHE_PATCH};apply=no"
+SRC_URI:append:imx8qm-var-som = " file://${DISABLE_CACHE_PATCH};apply=no"
 
 compile_fw() {
     DIR_GCC="$1"
@@ -148,7 +148,7 @@ do_install() {
     done
 }
 
-FILES_${PN} = " \
+FILES:${PN} = " \
 	${sysconfdir}/remoteproc \
 	${nonarch_base_libdir}/firmware \
 	/boot \
