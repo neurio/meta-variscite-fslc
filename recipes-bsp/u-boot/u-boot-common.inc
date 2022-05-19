@@ -9,17 +9,17 @@ SRCBRANCH = "imx_v2020.04_5.4.70_2.3.0_var01"
 SRCREV = "dfc8d6a681d16fe93fa99bae74e6ef7f70634eb8"
 UBOOT_INITIAL_ENV_DEVICE = "sd"
 
-SRCBRANCH_var-som-mx6 = "imx_v2018.03_4.14.78_1.0.0_ga_var02"
-SRCREV_var-som-mx6 = "e382ce1bbd5ce83e4f3b9dbeed5d04e41708aae5"
-UBOOT_INITIAL_ENV_DEVICE_var-som-mx6 = "nand"
+SRCBRANCH:var-som-mx6-bsp = "imx_v2018.03_4.14.78_1.0.0_ga_var02"
+SRCREV:var-som-mx6-bsp = "e382ce1bbd5ce83e4f3b9dbeed5d04e41708aae5"
+UBOOT_INITIAL_ENV_DEVICE:var-som-mx6-bsp = "nand"
 
-SRCBRANCH_imx6ul-var-dart = "imx_v2018.03_4.14.78_1.0.0_ga_var02"
-SRCREV_imx6ul-var-dart = "d93550dda0996abbc653e79851b3448bd5ed44a5"
-UBOOT_INITIAL_ENV_DEVICE_imx6ul-var-dart = "nand"
+SRCBRANCH:imx6ul-var-dart = "imx_v2018.03_4.14.78_1.0.0_ga_var02"
+SRCREV:imx6ul-var-dart = "d93550dda0996abbc653e79851b3448bd5ed44a5"
+UBOOT_INITIAL_ENV_DEVICE:imx6ul-var-dart = "nand"
 
-SRCBRANCH_imx7-var-som = "imx_v2018.03_4.14.78_1.0.0_ga_var02"
-SRCREV_imx7-var-som = "59341359399c8caa4d27b9325b777b8062af80f9"
-UBOOT_INITIAL_ENV_DEVICE_imx7-var-som = "nand"
+SRCBRANCH:imx7-var-som = "imx_v2018.03_4.14.78_1.0.0_ga_var02"
+SRCREV:imx7-var-som = "59341359399c8caa4d27b9325b777b8062af80f9"
+UBOOT_INITIAL_ENV_DEVICE:imx7-var-som = "nand"
 
 SRC_URI = "${UBOOT_SRC};branch=${SRCBRANCH}"
 
