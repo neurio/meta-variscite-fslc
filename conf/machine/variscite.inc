@@ -17,7 +17,8 @@ DEFAULTTUNE:mx8qxp-generic-bsp ?= "cortexa35-crypto"
 DEFAULTTUNE:mx8qm-generic-bsp ?= "cortexa72-cortexa53-crypto"
 
 # Variscite BSP default providers
-PREFERRED_PROVIDER:u-boot = "u-boot-variscite"
+IMX_DEFAULT_BOOTLOADER = "u-boot-variscite"
+
 PREFERRED_PROVIDER:u-boot-fw-utils = "u-boot-fw-utils"
 PREFERRED_PROVIDER:virtual/bootloader = "u-boot-variscite"
 PREFERRED_PROVIDER:virtual/kernel = "linux-variscite"
