@@ -19,9 +19,15 @@ DEFAULTTUNE:mx8qm-generic-bsp ?= "cortexa72-cortexa53-crypto"
 # Variscite BSP default providers
 IMX_DEFAULT_BOOTLOADER = "u-boot-variscite"
 
-PREFERRED_PROVIDER:u-boot-fw-utils = "u-boot-fw-utils"
-PREFERRED_PROVIDER:virtual/bootloader = "u-boot-variscite"
-PREFERRED_PROVIDER:virtual/kernel = "linux-variscite"
+PREFERRED_PROVIDER_u-boot-fw-utils = "u-boot-fw-utils"
+PREFERRED_PROVIDER_virtual/bootloader = "u-boot-variscite"
+IMX_DEFAULT_KERNEL = "linux-variscite"
+IMX_DEFAULT_KERNEL:imx-nxp-bsp = "linux-variscite"
+PREFERRED_PROVIDER_virtual/kernel = "linux-variscite"
+PREFERRED_PROVIDER_virtual/bootloader ??= "${IMX_DEFAULT_BOOTLOADER}"
+IMX_DEFAULT_MFGTOOL = "u-boot-imx-mfgtool"
+PREFERRED_PROVIDER_linux-mfgtool = "linux-imx-mfgtool"
+
 
 # Use i.MX Gstreamer Version
 MACHINE_GSTREAMER_1_0_PLUGIN:mx8-generic-bsp = "imx-gst1.0-plugin"
