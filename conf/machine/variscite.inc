@@ -31,11 +31,11 @@ PREFERRED_PROVIDER_linux-mfgtool = "linux-imx-mfgtool"
 
 # Use i.MX Gstreamer Version
 MACHINE_GSTREAMER_1_0_PLUGIN:mx8-generic-bsp = "imx-gst1.0-plugin"
-PREFERRED_VERSION:gstreamer1.0:mx8-generic-bsp ?= "1.16.2.imx"
-PREFERRED_VERSION:gstreamer1.0-plugins-base:mx8-generic-bsp ?= "1.16.2.imx"
-PREFERRED_VERSION:gstreamer1.0-plugins-good:mx8-generic-bsp ?= "1.16.3.imx"
-PREFERRED_VERSION:gstreamer1.0-plugins-bad:mx8-generic-bsp ?= "1.16.3.imx"
-PREFERRED_VERSION:gstreamer1.0-libav:mx8-generic-bsp ?= "1.16.0"
+PREFERRED_VERSION_gstreamer1.0:mx8-generic-bsp ?= "1.16.2.imx"
+PREFERRED_VERSION_gstreamer1.0-plugins-base:mx8-generic-bsp ?= "1.16.2.imx"
+PREFERRED_VERSION_gstreamer1.0-plugins-good:mx8-generic-bsp ?= "1.16.3.imx"
+PREFERRED_VERSION_gstreamer1.0-plugins-bad:mx8-generic-bsp ?= "1.16.3.imx"
+PREFERRED_VERSION_gstreamer1.0-libav:mx8-generic-bsp ?= "1.16.0"
 
 # Add VPU and Cortex M4/M7 firmware
 MACHINE_FIRMWARE:append:mx8-generic-bsp = " \
