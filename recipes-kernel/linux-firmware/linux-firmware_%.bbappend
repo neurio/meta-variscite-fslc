@@ -2,7 +2,7 @@
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-SRCREV_FORMAT = "linux-firmware"
+SRCREV_FORMAT = "brcm_tiwlan_tibt"
 
 SRCREV_brcm = "8081cd2bddb1569abe91eb50bd687a2066a33342"
 BRANCH_brcm = "8.2.0.16"
